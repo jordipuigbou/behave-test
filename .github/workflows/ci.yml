@@ -33,8 +33,18 @@ jobs:
     - name: Build crud
       run: make build-crud
 
+    - name: Run behave dry-run
+      run: make crud-tests-dry-run
+
     - name: Run test crud
       run: make run-crud-tests
+
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
+      with:
+        files: |
+          crud/tests/_output/*.xml
 
     - name: Clean crud
       run: make clean-crud

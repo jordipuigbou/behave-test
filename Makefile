@@ -30,6 +30,11 @@ run-crud-tests: ## run crud tests
 	docker compose -f $(CRUD_DIR)/docker-compose.yml down
 	docker compose -f $(CRUD_DIR)/docker-compose.yml run test
 
+.PHONY: crud-tests-dry-run
+crud-tests-dry-run: ## run crud tests
+	docker compose -f $(CRUD_DIR)/docker-compose.yml down
+	docker compose -f $(CRUD_DIR)/docker-compose.yml run test bash -c "behave --dry-run"
+
 .PHONY: run-crud-clean
 clean-crud: ## build run crud
 	docker compose -f $(CRUD_DIR)/docker-compose.yml down
