@@ -48,6 +48,10 @@ jobs:
       - name: Run apis
         run: make run-apis-coverage
 
+# Execute shell command to list current folder
+      - name: List folder
+        run: ls -la
+
       - name: Analyze with SonarCloud
 
         uses: SonarSource/sonarcloud-github-action@v2.0.2
