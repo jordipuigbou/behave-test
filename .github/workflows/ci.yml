@@ -21,7 +21,7 @@ jobs:
       run: make run-apis
 
     - name: clean apis
-      run: make clear-apis
+      run: make clean-apis
 
   crud:
 
@@ -34,7 +34,7 @@ jobs:
       run: make build-crud
 
     - name: Run test crud
-      run: make run-crud-test
+      run: make run-crud-tests
 
     - name: Clean crud
-      run: make clear-crud
+      run: make clean-crud
