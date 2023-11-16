@@ -21,6 +21,7 @@ jobs:
       run: make run-apis
 
     - name: clean apis
+      if: always()
       run: make clean-apis
 
   crud:
@@ -44,7 +45,8 @@ jobs:
       if: always()
       with:
         files: |
-          crud/tests/_output/*.xml
+          **/tests/_output/*.xml
 
     - name: Clean crud
+      if: always()
       run: make clean-crud
