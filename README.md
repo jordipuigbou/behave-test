@@ -80,4 +80,4 @@ Finalmente, si se quiere limpiar el entorno se puede hacer con:
     make clean-crud
 ```
 
-De esta manera se ejecuta la feature [product.feature](./crud/features/product.feature) que contiene un set básico (happy path) de tests de aceptación de la API.
+De esta manera se ejecuta la feature [crud.feature](./crud/tests/features/crud.feature) que contiene un set básico (happy path) de tests de aceptación de la API.
