@@ -56,10 +56,6 @@ jobs:
       - name: List folder
         run: ls -la apis/_output/reports
 
-      - name: fix code coverage paths
-        run: |
-          chmod 777 apis/_output/reports/coverage.xml && sed -i 's/\/home\/runner\/work\/behave-test\/behave-test\//\/github\/workspace\//g' apis/_output/reports/coverage.xml
-
       - name: Analyze with SonarCloud
 
         uses: SonarSource/sonarcloud-github-action@v2.0.2
