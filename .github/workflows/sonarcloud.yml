@@ -61,7 +61,7 @@ jobs:
             # mandatory
             -Dsonar.projectKey=jordipuigbou_behave-test
             -Dsonar.organization=jordipuigbou
-            -Dsonar.tests=apis/_output/reports/junit-apis.xml
+            -Dsonar.test.inclusions=**/apis/test.py
             -Dsonar.python.coverage.reportPaths=**/_output/reports/coverage.xml
             -Dsonar.python.version=3.12
             -Dsonar.python.xunit.reportPath=**/_output/reports/junit-apis.xml
