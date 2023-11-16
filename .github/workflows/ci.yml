@@ -24,7 +24,7 @@ jobs:
     - name: Run apis
       run: make run-apis
 
-    - name: Publish Test Results
+    - name: Publish APIs Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
@@ -51,7 +51,7 @@ jobs:
     - name: Run test crud
       run: make run-crud-tests
 
-    - name: Publish Test Results
+    - name: Publish Crud Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
