@@ -13,6 +13,11 @@ build-apis: ## build apis testing
 run-apis: ## run apis testing
 	docker compose -f $(APIS_DIR)/docker-compose.yml up
 
+.PHONY: run-apis-coverage
+run-apis-coverage: ## run apis coverage
+	docker compose -f $(APIS_DIR)/docker-compose.yml build
+	docker compose -f $(APIS_DIR)/docker-compose.yml run api bash -c "coverage run  -m pytest --junitxml=/root/_output/reports/junit-apis.xml /root/test.py && coverage xml -o /root/_output/reports/coverage.xml && coverage report"
+
 .PHONY: clean-apis
 clean-apis: ## clean apis
 	docker compose -f $(APIS_DIR)/docker-compose.yml down
