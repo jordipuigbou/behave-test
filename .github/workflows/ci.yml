@@ -45,7 +45,7 @@ jobs:
       if: always()
       with:
         files: |
-          **/tests/_output/*.xml
+          **/tests/_output/reports/*.xml
 
     - name: Clean crud
       if: always()
