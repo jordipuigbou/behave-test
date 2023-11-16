@@ -58,7 +58,7 @@ jobs:
 
       - name: fix code coverage paths
         run: |
-          sed -i 's/\/home\/runner\/work\/behave-test\/behave-test\//\/github\/workspace\//g' apis/_output/reports/coverage.xml
+          chmod 777 apis/_output/reports/coverage.xml && sed -i 's/\/home\/runner\/work\/behave-test\/behave-test\//\/github\/workspace\//g' apis/_output/reports/coverage.xml
 
       - name: Analyze with SonarCloud
 
