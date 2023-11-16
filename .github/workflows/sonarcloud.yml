@@ -43,7 +43,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: clone project repo
+        uses: actions/checkout@v3
+        with:
+          # Disable shallow clones, as recommended by SonarQube for improved analysis and reports
+          fetch-depth: 0
 
       - name: Run apis
         run: make run-apis-coverage
@@ -51,6 +55,10 @@ jobs:
 # Execute shell command to list current folder
       - name: List folder
         run: ls -la apis/_output/reports
+
+      - name: fix code coverage paths
+        run: |
+          sed -i 's/\/home\/runner\/work\/behave-test\/behave-test\//\/github\/workspace\//g' apis/_output/reports/coverage.xml
 
       - name: Analyze with SonarCloud
 
