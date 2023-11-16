@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  api:
+    image: api-test-image
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["python", "/root/test.py"]
