@@ -6,4 +6,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: ["python", "/root/test.py"]
+    command: ["pytest", "--junitxml=/root/_output/reports/junit-apis.xml", "--color=yes", "/root/test.py"]
+    volumes:
+      - ./_output:/root/_output
