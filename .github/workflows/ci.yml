@@ -30,6 +30,7 @@ jobs:
       with:
         files: |
           **/_output/reports/*.xml
+        check_name: APIs Tests
 
     - name: clean apis
       if: always()
@@ -57,6 +58,7 @@ jobs:
       with:
         files: |
           **/tests/_output/reports/*.xml
+        check_name: Crud Tests
 
     - name: Clean crud
       if: always()
