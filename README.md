@@ -1,8 +1,8 @@
-# Prueba Técnica - Desarrollador Backend
+# Test API and Behave
 
 ## Descripción
 
-El código de este repositorio es una prueba técnica con el perfil de backend. El lenguaje elegido para realizar la prueba ha sido Python.
+Proyecto para la prueba de desarrollo de una API y testing mediante Behave.
 
 ## Pruebas
 
@@ -20,7 +20,7 @@ Como pre-requisito se necesita tener instalado [Docker](https://docs.docker.com/
 El código Python que se ha desarrollado para la prueba de la `petstore` se encuentra en la carpeta [apis](./apis/).
 
 - En la carpeta de [petstore](./apis/petstore) se encuentra el código para hacer las llamadas a la api de `petstore` con las distintas clases y métodos necesarios.
-- El fichero [test.py](./apis/test.py) contiene el código con el flujo de llamadas requerido en el ejercicio.
+- El fichero [test.py](./apis/test.py) contiene el código con el flujo de llamadas para probar la primera API.
 
 Para ejecutar el código se puede hacer con los siguientes comandos:
 
