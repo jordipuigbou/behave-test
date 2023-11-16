@@ -16,7 +16,7 @@ run-apis: ## run apis testing
 .PHONY: run-apis-coverage
 run-apis-coverage: ## run apis coverage
 	docker compose -f $(APIS_DIR)/docker-compose.yml build
-	docker compose -f $(APIS_DIR)/docker-compose.yml run api bash -c "coverage run  -m pytest /root/test.py && coverage xml && coverage report && mv coverage.xml /root/_output/reports/"
+	docker compose -f $(APIS_DIR)/docker-compose.yml run api bash -c "coverage run  -m pytest /root/test.py && coverage xml && coverage report && mv coverage.xml /root/_output/reports/coverage.xml"
 
 .PHONY: clean-apis
 clean-apis: ## clean apis
