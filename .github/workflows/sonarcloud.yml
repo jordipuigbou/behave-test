@@ -63,6 +63,9 @@ jobs:
             -Dsonar.organization=jordipuigbou
             -Dsonar.tests=apis/_output/reports/junit-apis.xml
             -Dsonar.python.coverage.reportPaths=**/_output/reports/coverage.xml
+            -Dsonar.python.version=3.12
+            -Dsonar.python.xunit.reportPath=**/_output/reports/junit-apis.xml
+            -Dsonar.python.xunit.skipDetails=true
             # Comma-separated paths to directories containing main source files.
             #-Dsonar.sources= # optional, default is project base directory
             # When you need the analysis to take place in a directory other than the one from which it was launched
