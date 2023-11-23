@@ -1,6 +1,7 @@
 # Test API and Behave
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jordipuigbou_behave-test&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=jordipuigbou_behave-test)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=jordipuigbou_behave-test&metric=coverage)](https://sonarcloud.io/summary/new_code?id=jordipuigbou_behave-test)
 
 ## Descripción
 
