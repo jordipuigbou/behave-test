@@ -4,3 +4,5 @@
 **/__pycache__
 
 **/_output
+
+**/reports/coverage_fixed.xml
