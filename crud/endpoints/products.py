@@ -25,7 +25,10 @@ class Products(Resource):
             return {"status": "error reading products"}, 500
 
     def post(self):
-        json_data = request.get_json(force=True)
+        try:
+            json_data = request.get_json(force=True)
+        except:
+            return {"status": "error parsing json"}, 500
         try:
             self.db.products.insert_one(json_data)
             return {"status": "product inserted"}, 200
@@ -34,7 +37,7 @@ class Products(Resource):
 
     def put(self, id=None):
         if id is None:
-            return {"status": "product not updated"}, 500
+            return {"status": "product not updated because id is not provided"}, 500
         json_data = request.get_json(force=True)
         try:
             self.db.products.update_one({"_id": ObjectId(id)}, {"$set": json_data})

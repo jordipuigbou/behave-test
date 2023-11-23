@@ -30,6 +30,12 @@ build-crud: ## build crud
 run-crud: ## run crud
 	docker compose -f $(CRUD_DIR)/docker-compose.yml run backend
 
+.PHONY: run-crud-unit-tests
+run-crud-unit-tests: ## run crud unit tests
+	docker compose -f $(CRUD_DIR)/docker-compose.yml down
+	docker compose -f $(CRUD_DIR)/docker-compose.yml run unit-test
+
+
 .PHONY: run-crud-tests
 run-crud-tests: ## run crud tests
 	docker compose -f $(CRUD_DIR)/docker-compose.yml down

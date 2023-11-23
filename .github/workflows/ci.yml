@@ -49,6 +49,9 @@ jobs:
     - name: Run behave dry-run
       run: make crud-tests-dry-run
 
+    - name: Run unit test crud
+      run: make run-crud-unit-tests
+
     - name: Run test crud
       run: make run-crud-tests
 

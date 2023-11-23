@@ -49,15 +49,19 @@ jobs:
           # Disable shallow clones, as recommended by SonarQube for improved analysis and reports
           fetch-depth: 0
 
-      - name: Run apis
+      - name: Run apis unit test
         run: make run-apis-coverage
 
-      - name: List folder
-        run: ls -la apis/_output/reports
+      - name: Run crud unit test
+        run: make run-crud-unit-tests
 
-      - name: Fix code coverage paths
+      - name: Fix apis code coverage paths
         run: |
           mkdir apis/reports ; cp apis/_output/reports/coverage.xml apis/reports/coverage_fixed.xml ; sed -i 's/root/\/github\/workspace\/apis/g' apis/reports/coverage_fixed.xml
+
+      - name: Fix apis code coverage paths
+        run: |
+          mkdir crud/reports ; cp crud/_output/reports/coverage.xml crud/reports/coverage_fixed.xml ; sed -i 's/root/\/github\/workspace\/crud/g' crud/reports/coverage_fixed.xml
 
       - name: Analyze with SonarCloud
 
