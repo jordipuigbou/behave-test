@@ -52,7 +52,6 @@ jobs:
       - name: Run apis
         run: make run-apis-coverage
 
-# Execute shell command to list current folder
       - name: List folder
         run: ls -la apis/_output/reports
 
@@ -64,13 +63,13 @@ jobs:
 
       - name: fix code coverage paths
         run: |
-          sed 's/\/root/\/github\/workspace/g' apis/_output/reports/coverage.xml > apis/_output/reports/coverage_fixed.xml ; cat apis/_output/reports/coverage_fixed.xml > apis/_output/reports/coverage.xml; rm apis/_output/reports/coverage_fixed.xml
+          cp apis/_output/reports/coverage.xml /tmp/coverage_fixed.xml ;sed -i 's/\/root/\/github\/workspace/g' /tmp/coverage_fixed.xml
 
       - name: Archive apis artifacts before clean
         uses: actions/upload-artifact@v3
         with:
           name: apis_after
-          path: apis/_output/reports
+          path: /tmp/coverage_fixed.xml
 
       - name: Analyze with SonarCloud
 
