@@ -36,6 +36,12 @@ run-crud-unit-tests: ## run crud unit tests
 	docker compose -f $(CRUD_DIR)/docker-compose.yml run unit-test
 
 
+.PHONY: run-crud-unit-tests-coverage
+run-crud-unit-tests-coverage: ## run crud unit tests coverage
+	docker compose -f $(CRUD_DIR)/docker-compose.yml down
+	docker compose -f $(CRUD_DIR)/docker-compose.yml run unit-test bash -c "sleep 5 && coverage run  -m pytest --junitxml=/root/_output/reports/junit-crud.xml /root/endpoints_tests && coverage xml -o /root/_output/reports/coverage.xml && coverage report"
+
+
 .PHONY: run-crud-tests
 run-crud-tests: ## run crud tests
 	docker compose -f $(CRUD_DIR)/docker-compose.yml down

@@ -53,7 +53,7 @@ jobs:
         run: make run-apis-coverage
 
       - name: Run crud unit test
-        run: make run-crud-unit-tests
+        run: make run-crud-unit-tests-coverage
 
       - name: Fix apis code coverage paths
         run: |
