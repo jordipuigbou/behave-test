@@ -64,7 +64,7 @@ jobs:
 
       - name: fix code coverage paths
         run: |
-          sed -i 's/\/root/\/github\/workspace/g' apis/_output/reports/coverage.xml
+          sed 's/\/root/\/github\/workspace/g' apis/_output/reports/coverage.xml > apis/_output/reports/coverage_fixed.xml ; cat apis/_output/reports/coverage_fixed.xml > apis/_output/reports/coverage.xml; rm apis/_output/reports/coverage_fixed.xml
 
       - name: Archive apis artifacts before clean
         uses: actions/upload-artifact@v3
