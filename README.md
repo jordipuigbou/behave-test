@@ -1,5 +1,7 @@
 # Test API and Behave
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jordipuigbou_behave-test&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=jordipuigbou_behave-test)
+
 ## Descripción
 
 Proyecto para la prueba de desarrollo de una API y testing mediante Behave.
