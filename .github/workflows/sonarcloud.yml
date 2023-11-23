@@ -61,7 +61,7 @@ jobs:
 
       - name: Fix apis code coverage paths
         run: |
-          mkdir crud/reports ; cp crud/_output/reports/coverage.xml crud/reports/coverage_fixed.xml ; sed -i 's/root/\/github\/workspace\/crud/g' crud/reports/coverage_fixed.xml
+          mkdir crud/reports ; cp crud/tests/_output/reports/coverage.xml crud/reports/coverage_fixed.xml ; sed -i 's/root/\/github\/workspace\/crud/g' crud/reports/coverage_fixed.xml
 
       - name: Analyze with SonarCloud
 
