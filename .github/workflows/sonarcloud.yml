@@ -56,6 +56,22 @@ jobs:
       - name: List folder
         run: ls -la apis/_output/reports
 
+      - name: Archive apis artifacts before clean
+        uses: actions/upload-artifact@v3
+        with:
+          name: apis_before
+          path: apis/_output/reports
+
+      - name: fix code coverage paths
+        run: |
+          sed -i 's/\/root/\/github\/workspace/g' apis/_output/reports/coverage.xml
+
+      - name: Archive apis artifacts before clean
+        uses: actions/upload-artifact@v3
+        with:
+          name: apis_after
+          path: apis/_output/reports
+
       - name: Analyze with SonarCloud
 
         uses: SonarSource/sonarcloud-github-action@v2.0.2
