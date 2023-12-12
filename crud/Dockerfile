@@ -1,4 +1,5 @@
 FROM python:3.12.1-slim-bullseye
+
 COPY ./requirements.txt /root/requirements.txt
 RUN pip install -r /root/requirements.txt
 
