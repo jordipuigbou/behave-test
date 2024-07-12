@@ -3,3 +3,4 @@ flask_restful~=0.3
 pymongo~=4.7
 pytest~=8.1
  coverage~=7.6
+ 
